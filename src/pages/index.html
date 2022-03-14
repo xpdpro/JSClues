@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>JService.IO</title>
+    <meta charset="utf-8" />
+
+    <!-- Main Style -->
+    <link href="../css/app.css" rel="stylesheet" />
+    <!--Fontawesome-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container card shadow d-flex justify-content-center mt-5">
+        <div class="flex-center flex-column">
+            <h1>C L U E S</h1>
+            <h4>Powered by JService.IO</h4>
+        </div>
+        <div class="m-4">
+
+            <!-- nav options -->
+            <ul class="nav nav-pills mb-3 shadow-sm" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                    <a data-toggle="tab" role="tab" class="nav-link active" id="randomclues-tab" data-bs-toggle="pill" href="#home">Random Clues</a>
+                </li>
+                <li class="nav-item">
+                    <a data-toggle="tab" role="tab" class="nav-link" id="category-tab" data-bs-toggle="pill" href="#categories">Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a data-toggle="tab" role="tab" class="nav-link" id="catclues-tab" data-bs-toggle="pill" href="#catclues">Clues in Category</a>
+                </li>
+                <li class="nav-item">
+                    <a data-toggle="tab" role="tab" class="nav-link" id="clues-tab" data-bs-toggle="pill" href="#clues">Clues</a>
+                </li>
+            </ul>
+
+            <!-- content -->
+            <div class="tab-content">
+
+                <!-- Random Clues -->
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <h2>Question</h2>
+                    <p id="question" class="question-text"></p>
+                    <div class="answer-container">
+                        <p class="answer-prefix">Answer</p>
+                        <p class="answer-text" id="answer"></p>
+                    </div>
+                    <br />
+                    <a class="btn" href="javascript:javascript:void(0)" onClick="javascript: getRandomClue();">Next</a>
+                </div>
+
+                <!-- Categories -->
+                <div class="tab-pane fade" id="categories" role="tabpanel">
+                    <div class="accordion" id="categoryList"></div>
+                </div>
+
+                <!-- Clues in Categories -->
+                <div class="tab-pane fade" id="catclues" role="tabpanel">
+                    <div class="question-text">
+                        <strong>Select category</strong>
+                        <select id="dpCategory" onchange="catChange(this)" style="width:100%!important">
+                        </select>
+                    </div>
+                    <div class="accordion" id="catClueList"></div>
+                </div>
+
+                <!-- Clues -->
+                <div class="tab-pane fade" id="clues" role="tabpanel">
+                    <div class="question-text">
+                        <strong>Select air date</strong>
+                        <select id="airDate" onchange="dateChange(this)">
+                        </select>
+                    </div>
+                    <div class="accordion" id="clueList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/scripts.js"></script>
+</body>
+</html>
