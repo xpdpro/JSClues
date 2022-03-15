@@ -131,8 +131,8 @@ function renderClues(data, divContainer) {
     data.forEach(item => {
         html += '<div class="accordion-item">';
         html += '<h4 class="accordion-header" id="h-' + item.id + '">';
-        html += '<button class="accordion-button" type = "button" data-bs-toggle="collapse" data-bs-target="#' + item.id + '" aria-expanded="false">'+item.question + '</button></h4>'
-        html += '<div id="' + item.id + '" class="accordion-collapse collapse show" data-bs-parent="#catCluesList">'
+        html += '<button class="accordion-button" type = "button" data-bs-toggle="collapse" data-bs-target="#r' + item.id + '" aria-expanded="false">'+item.question + '</button></h4>'
+        html += '<div id="r' + item.id + '" class="accordion-collapse collapse show" data-bs-parent="#catCluesList">'
         html += '<div class="accordion-body">';
         html += item.answer;
         html += '</div></div></div></div>';
